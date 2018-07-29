@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private let secretString = "Setting up Travis for SwiftLint"
+    private let secretString = "Testing for travis"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
