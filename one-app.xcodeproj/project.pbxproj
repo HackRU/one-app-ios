@@ -34,17 +34,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9675F6CA210E6F9C00081F58 /* one-app-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "one-app-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9675F6CA210E6F9C00081F58 /* one-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "one-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9675F6CD210E6F9C00081F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9675F6CF210E6F9C00081F58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9675F6D2210E6F9C00081F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9675F6D4210E6F9E00081F58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9675F6D7210E6F9E00081F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9675F6D9210E6F9E00081F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9675F6DE210E6F9E00081F58 /* one-app-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "one-app-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9675F6DE210E6F9E00081F58 /* one-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "one-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9675F6E2210E6F9E00081F58 /* one_app_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = one_app_iosTests.swift; sourceTree = "<group>"; };
 		9675F6E4210E6F9E00081F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9675F6E9210E6F9E00081F58 /* one-app-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "one-app-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9675F6E9210E6F9E00081F58 /* one-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "one-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9675F6ED210E6F9E00081F58 /* one_app_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = one_app_iosUITests.swift; sourceTree = "<group>"; };
 		9675F6EF210E6F9E00081F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,9 +87,9 @@
 		9675F6CB210E6F9C00081F58 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9675F6CA210E6F9C00081F58 /* one-app-ios.app */,
-				9675F6DE210E6F9E00081F58 /* one-app-iosTests.xctest */,
-				9675F6E9210E6F9E00081F58 /* one-app-iosUITests.xctest */,
+				9675F6CA210E6F9C00081F58 /* one-app.app */,
+				9675F6DE210E6F9E00081F58 /* one-appTests.xctest */,
+				9675F6E9210E6F9E00081F58 /* one-appUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,26 +128,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9675F6C9210E6F9C00081F58 /* one-app-ios */ = {
+		9675F6C9210E6F9C00081F58 /* one-app */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9675F6F2210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-app-ios" */;
+			buildConfigurationList = 9675F6F2210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-app" */;
 			buildPhases = (
 				9675F6C6210E6F9C00081F58 /* Sources */,
 				9675F6C7210E6F9C00081F58 /* Frameworks */,
 				9675F6C8210E6F9C00081F58 /* Resources */,
+				9675F6FB210E71A000081F58 /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "one-app-ios";
+			name = "one-app";
 			productName = "one-app-ios";
-			productReference = 9675F6CA210E6F9C00081F58 /* one-app-ios.app */;
+			productReference = 9675F6CA210E6F9C00081F58 /* one-app.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9675F6DD210E6F9E00081F58 /* one-app-iosTests */ = {
+		9675F6DD210E6F9E00081F58 /* one-appTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9675F6F5210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-app-iosTests" */;
+			buildConfigurationList = 9675F6F5210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-appTests" */;
 			buildPhases = (
 				9675F6DA210E6F9E00081F58 /* Sources */,
 				9675F6DB210E6F9E00081F58 /* Frameworks */,
@@ -158,14 +159,14 @@
 			dependencies = (
 				9675F6E0210E6F9E00081F58 /* PBXTargetDependency */,
 			);
-			name = "one-app-iosTests";
+			name = "one-appTests";
 			productName = "one-app-iosTests";
-			productReference = 9675F6DE210E6F9E00081F58 /* one-app-iosTests.xctest */;
+			productReference = 9675F6DE210E6F9E00081F58 /* one-appTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9675F6E8210E6F9E00081F58 /* one-app-iosUITests */ = {
+		9675F6E8210E6F9E00081F58 /* one-appUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9675F6F8210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-app-iosUITests" */;
+			buildConfigurationList = 9675F6F8210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-appUITests" */;
 			buildPhases = (
 				9675F6E5210E6F9E00081F58 /* Sources */,
 				9675F6E6210E6F9E00081F58 /* Frameworks */,
@@ -176,9 +177,9 @@
 			dependencies = (
 				9675F6EB210E6F9E00081F58 /* PBXTargetDependency */,
 			);
-			name = "one-app-iosUITests";
+			name = "one-appUITests";
 			productName = "one-app-iosUITests";
-			productReference = 9675F6E9210E6F9E00081F58 /* one-app-iosUITests.xctest */;
+			productReference = 9675F6E9210E6F9E00081F58 /* one-appUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +205,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9675F6C5210E6F9C00081F58 /* Build configuration list for PBXProject "one-app-ios" */;
+			buildConfigurationList = 9675F6C5210E6F9C00081F58 /* Build configuration list for PBXProject "one-app" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -217,9 +218,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9675F6C9210E6F9C00081F58 /* one-app-ios */,
-				9675F6DD210E6F9E00081F58 /* one-app-iosTests */,
-				9675F6E8210E6F9E00081F58 /* one-app-iosUITests */,
+				9675F6C9210E6F9C00081F58 /* one-app */,
+				9675F6DD210E6F9E00081F58 /* one-appTests */,
+				9675F6E8210E6F9E00081F58 /* one-appUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +251,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9675F6FB210E71A000081F58 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9675F6C6210E6F9C00081F58 /* Sources */ = {
@@ -282,12 +300,12 @@
 /* Begin PBXTargetDependency section */
 		9675F6E0210E6F9E00081F58 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9675F6C9210E6F9C00081F58 /* one-app-ios */;
+			target = 9675F6C9210E6F9C00081F58 /* one-app */;
 			targetProxy = 9675F6DF210E6F9E00081F58 /* PBXContainerItemProxy */;
 		};
 		9675F6EB210E6F9E00081F58 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9675F6C9210E6F9C00081F58 /* one-app-ios */;
+			target = 9675F6C9210E6F9C00081F58 /* one-app */;
 			targetProxy = 9675F6EA210E6F9E00081F58 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -479,7 +497,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/one-app-ios.app/one-app-ios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/one-app.app/one-app";
 			};
 			name = Debug;
 		};
@@ -500,7 +518,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/one-app-ios.app/one-app-ios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/one-app.app/one-app";
 			};
 			name = Release;
 		};
@@ -547,7 +565,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9675F6C5210E6F9C00081F58 /* Build configuration list for PBXProject "one-app-ios" */ = {
+		9675F6C5210E6F9C00081F58 /* Build configuration list for PBXProject "one-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9675F6F0210E6F9E00081F58 /* Debug */,
@@ -556,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9675F6F2210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-app-ios" */ = {
+		9675F6F2210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9675F6F3210E6F9E00081F58 /* Debug */,
@@ -565,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9675F6F5210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-app-iosTests" */ = {
+		9675F6F5210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-appTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9675F6F6210E6F9E00081F58 /* Debug */,
@@ -574,7 +592,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9675F6F8210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-app-iosUITests" */ = {
+		9675F6F8210E6F9E00081F58 /* Build configuration list for PBXNativeTarget "one-appUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9675F6F9210E6F9E00081F58 /* Debug */,
