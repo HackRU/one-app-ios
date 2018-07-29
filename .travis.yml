@@ -1,3 +1,5 @@
+sudo: required
+
 install:
   - ./install_swiftlint.sh
 
