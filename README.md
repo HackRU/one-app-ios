@@ -1,4 +1,4 @@
-# One App iOS
+# One App iOS - /announcements
 
 ## Description
 *What is the purpose of this project?*
@@ -47,6 +47,8 @@ Currently we are looking to conform to the style-guide written by [RayWenderlich
 * Cleanup old code-base
 * Work on a new design
 * Add new features and fix bugs from last semester
+
+This branch is working on announcements specifically!
 
 ## Links to Further docs
 
