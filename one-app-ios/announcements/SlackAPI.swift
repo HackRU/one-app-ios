@@ -1,18 +1,17 @@
 //
-//  InfoAPI.swift
+//  SlackAPI.swift
 //  one-app
 //
-//  Created by Sunny Feng on 8/23/18.
+//  Created by Sunny Feng on 9/6/18.
 //  Copyright © 2018 HackRU. All rights reserved.
 //
 
 import UIKit
 
-class InfoAPI: NSObject {
+class SlackAPI: NSObject {
     
-    //oAuth ID: key name = calendar-key, 
     override init() {
-       
+        
     }
     
     static func apiCall() {
@@ -21,14 +20,16 @@ class InfoAPI: NSObject {
         // Once LCS is working, load it in with that
         
         // Url with the data
-        let url = URL(string: "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/dayof-events")
+        let url = URL(string: "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/dayof-slack")
+        
+        // https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/dayof-slack
         
         // Creating new thread to handle getting data
         let dataTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
             // If data exists, print
             if let data = data {
-               // print("Data: \(data)")
+                // print("Data: \(data)")
                 
                 // Dictionary with String key and any object as value
                 guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String: Any?] else {
@@ -65,7 +66,7 @@ class InfoAPI: NSObject {
                     
                     let tsDouble = Double(ts)
                     let date = NSDate(timeIntervalSince1970: TimeInterval(tsDouble!))
-                
+                    
                     print("Timestamp: \(ts)")
                     
                 }
@@ -74,6 +75,7 @@ class InfoAPI: NSObject {
         
         // Run the thread
         dataTask.resume()
+        
     }
-    
+
 }
