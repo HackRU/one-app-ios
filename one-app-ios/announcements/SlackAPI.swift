@@ -22,8 +22,6 @@ class SlackAPI: NSObject {
         // Url with the data
         let url = URL(string: "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/dayof-slack")
         
-        // https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/dayof-slack
-        
         // Creating new thread to handle getting data
         let dataTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
@@ -69,6 +67,7 @@ class SlackAPI: NSObject {
                     
                     print("Timestamp: \(ts)")
                     
+                    // add TextandTs to array and return that array
                 }
             }
         }

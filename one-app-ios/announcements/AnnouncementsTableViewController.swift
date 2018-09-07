@@ -9,11 +9,12 @@
 import UIKit
 
 class AnnouncementsTableViewController: UITableViewController {
-    let array = ["Hello", "My", "Name", "Is", "Sunny"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        SlackAPI.apiCall();
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
