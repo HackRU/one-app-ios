@@ -10,12 +10,28 @@ import UIKit
 
 class TextAndTs {
     
-    var text : String?
-    var ts : String?
+    var text : String
+    var ts : String
+    var date : Date
     
     init(text : String, ts : String) {
         self.text = text
         self.ts = ts
+        
+        let tsDouble = Double(ts)
+        let date = Date(timeIntervalSince1970: TimeInterval(tsDouble!))
+        self.date = date
+    }
+    
+    func toString () -> String {
+        return stringDate(date: date) + ": " + text
+    }
+    
+    func stringDate (date : Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.setLocalizedDateFormatFromTemplate("MM-dd-yyyy") // set template after setting locale
+        return dateFormatter.string(from: date as Date)
     }
 
 }

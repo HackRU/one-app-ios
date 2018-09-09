@@ -14,20 +14,34 @@ class SlackAPI: NSObject {
         
     }
     
-    static func apiCall() {
-        // TODO: get a Google Calendar information and load it in as practice
-        // Create auth token from Google Calendar API and do it from there
-        // Once LCS is working, load it in with that
+    static func apiCall() -> [TextAndTs] {
         
         // Url with the data
         let url = URL(string: "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/dayof-slack")
         
+        var list = [TextAndTs]()
+        
+        // not going into here
+        getData(url: url!) { (textTsList) in
+            list = textTsList
+            print("HELLO")
+        }
+        
+        print(list)
+        
+        return list
+    }
+    
+    static func getData(url: URL, completionBlock: @escaping (([TextAndTs]) -> ())) {
         // Creating new thread to handle getting data
-        let dataTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             // If data exists, print
             if let data = data {
-                // print("Data: \(data)")
+                var textTsList = [TextAndTs]()
+                
+                //TEST - take out later
+                let textTs = TextAndTs(text : "Test", ts : "12342323423")
+                textTsList.insert(textTs, at: 0)
                 
                 // Dictionary with String key and any object as value
                 guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String: Any?] else {
@@ -41,40 +55,41 @@ class SlackAPI: NSObject {
                 
                 // check for status code
                 if (statusCode != 200) {
-                    //error
+                    // error
+                    return
                 }
                 
                 guard let body = json["body"] as? NSArray else {
                     return
                 }
-                print("Body: \(body)")
+                // print("Body: \(body)")
                 
                 for item in body {
-                    print("Item: \(item)")
+                    // print("Item: \(item)")
                     let dict = item as! [String: Any?]
-                    print("Dict: \(dict)")
+                    
+                    // print("Dict: \(dict)")
+                    
                     guard let text = dict["text"] as? String else {
                         return
                     }
                     
-                    print("Text: \(text)")
+                    //print("Text: \(text)")
                     guard let ts = dict["ts"] as? String else {
                         return
                     }
                     
-                    let tsDouble = Double(ts)
-                    let date = NSDate(timeIntervalSince1970: TimeInterval(tsDouble!))
+                    //print("Timestamp: \(ts)")
+                    let textTs = TextAndTs(text : text, ts : ts)
                     
-                    print("Timestamp: \(ts)")
-                    
-                    // add TextandTs to array and return that array
+                    textTsList.append(textTs)
                 }
+                
+                print("TextListCount: \(textTsList.count)")
+                completionBlock(textTsList)
             }
         }
-        
-        // Run the thread
         dataTask.resume()
-        
     }
 
 }

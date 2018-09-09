@@ -15,10 +15,9 @@ class InfoAPI: NSObject {
        
     }
     
-    static func apiCall() {
-        // TODO: get a Google Calendar information and load it in as practice
-        // Create auth token from Google Calendar API and do it from there
-        // Once LCS is working, load it in with that
+    static func apiCall() -> [TextAndTs] {
+        
+        var textTsList = [TextAndTs]()
         
         // Url with the data
         let url = URL(string: "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/dayof-events")
@@ -54,11 +53,11 @@ class InfoAPI: NSObject {
                     print("Item: \(item)")
                     let dict = item as! [String: Any?]
                     print("Dict: \(dict)")
-                    guard let text = dict["text"] as? String else {
+                    guard let summary = dict["summary"] as? String else {
                         return
                     }
                     
-                    print("Text: \(text)")
+                    print("Text: \(summary)")
                     guard let ts = dict["ts"] as? String else {
                         return
                     }
@@ -68,12 +67,16 @@ class InfoAPI: NSObject {
                 
                     print("Timestamp: \(ts)")
                     
+                    let textTs = TextAndTs(text : summary, ts : ts)
+                    textTsList.append(textTs)
                 }
             }
         }
         
         // Run the thread
         dataTask.resume()
+        
+        return textTsList
     }
     
 }

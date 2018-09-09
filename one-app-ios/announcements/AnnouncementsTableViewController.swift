@@ -9,11 +9,14 @@
 import UIKit
 
 class AnnouncementsTableViewController: UITableViewController {
+    
+    var messages = [TextAndTs]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SlackAPI.apiCall();
+        messages = SlackAPI.apiCall()
+        print("Count: \(messages.count)")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -36,14 +39,14 @@ class AnnouncementsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return array.count
+        return messages.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "announce_cell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = messages[indexPath.row].toString()
 
         return cell
     }
