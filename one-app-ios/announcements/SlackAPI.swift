@@ -21,10 +21,12 @@ class SlackAPI: NSObject {
         
         var list = [TextAndTs]()
         
-        // not going into here
-        getData(url: url!) { (textTsList) in
-            list = textTsList
-            print("HELLO")
+        // not going into here, not working
+        DispatchQueue.main.async {
+            getData(url: url!) { (textTsList) in
+                list = textTsList
+                print("HELLO")
+            }
         }
         
         print(list)
@@ -62,10 +64,12 @@ class SlackAPI: NSObject {
                 guard let body = json["body"] as? NSArray else {
                     return
                 }
-                // print("Body: \(body)")
+                
+                print("AT BODY")
                 
                 for item in body {
-                    // print("Item: \(item)")
+                    print("AT ITEM")
+                    
                     let dict = item as! [String: Any?]
                     
                     // print("Dict: \(dict)")
@@ -90,6 +94,7 @@ class SlackAPI: NSObject {
             }
         }
         dataTask.resume()
+        
     }
 
 }
