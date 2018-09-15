@@ -12,20 +12,25 @@ class TableViewController: UITableViewController {
     // let array = ["Hello", "My", "Name", "Is", "Sunny"]
 
     var messages = [TextAndTs]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Call for data
-       // messages = InfoAPI.apiCall()
-        messages = SlackAPI.apiCall()
-        print("Count: \(messages.count)")
-        
+        InfoAPI.apiCall { (textArr) in
+            self.messages = textArr
+            self.loadTable()
+        }
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func loadTable(){
+         self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +50,6 @@ class TableViewController: UITableViewController {
         return messages.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
