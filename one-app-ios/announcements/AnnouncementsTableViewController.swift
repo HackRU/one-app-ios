@@ -11,6 +11,7 @@ import UIKit
 class AnnouncementsTableViewController: UITableViewController {
 
     var messages = [TextAndTs]()
+    var currentCell = 0;
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,23 @@ class AnnouncementsTableViewController: UITableViewController {
 
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(messages[indexPath.row].toString())
+        currentCell = indexPath.row
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if (segue.destination is ViewController) {
+            let vc = segue.destination as? ViewController
+            vc?.message = messages[currentCell].toString()
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,15 +110,6 @@ class AnnouncementsTableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

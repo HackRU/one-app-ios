@@ -10,14 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     private let secretString = "Testing for travis"
+    
+    var message : String?
+    
+    @IBOutlet var desc: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+       desc.text = message
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
 
 }

@@ -11,9 +11,15 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var messages = [TextAndTs]()
+    var cellText = ""
 
+    @IBOutlet var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        table.delegate = self
+        table.dataSource = self
 
         // Call for data
        InfoAPI.apiCall { (textArr) in
@@ -25,11 +31,11 @@ class TableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     func loadTable(){
-         self.tableView.reloadData()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +61,21 @@ class TableViewController: UITableViewController {
         cell.textLabel?.text = messages[indexPath.row].toString()
 
         return cell
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if (segue.identifier == "gottenCellInfo") {
+            if let cell = sender as? UITableViewCell,
+                let indexPath = tableView.indexPath(for: cell) {
+                let vc = segue.destination as? ViewController
+                vc?.message = (messages[indexPath.row]).toString()
+            }
+        }
     }
 
     /*
@@ -89,16 +110,6 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     */
 
