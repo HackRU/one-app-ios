@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Events-->
         <scene sceneID="qgD-km-OFv">
             <objects>
                 <tableViewController id="Mj7-bM-Moh" customClass="TableViewController" customModule="one_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                             <outlet property="delegate" destination="Mj7-bM-Moh" id="EvB-xa-KB6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ffm-hg-XTa"/>
+                    <navigationItem key="navigationItem" title="Events" id="Ffm-hg-XTa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vy5-Mg-JsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

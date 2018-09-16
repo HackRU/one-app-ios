@@ -30,7 +30,7 @@ class TextAndTs {
     func stringDate (date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US")
-        dateFormatter.setLocalizedDateFormatFromTemplate("MM-dd-yyyy") // set template after setting locale
+        dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm a") // set template after setting locale
         return dateFormatter.string(from: date as Date)
     }
 

@@ -9,15 +9,14 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    // let array = ["Hello", "My", "Name", "Is", "Sunny"]
-
+    
     var messages = [TextAndTs]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Call for data
-        InfoAPI.apiCall { (textArr) in
+       InfoAPI.apiCall { (textArr) in
             self.messages = textArr
             self.loadTable()
         }

@@ -51,7 +51,7 @@ class InfoAPI: NSObject {
                 //print("Body: \(body)")
 
                 for item in body {
-                    print("Item: \(item)")
+                    //print("Item: \(item)")
                     guard let dict = item as? [String: Any] else {
                         return
                     }
@@ -60,7 +60,7 @@ class InfoAPI: NSObject {
                         return
                     }
 
-                    //print("Text: \(summary)")
+                    print("Text: \(summary)")
                     guard let timestamp = dict["created"] as? String else {
                         print("TIME STAMP FAILE")
                         return

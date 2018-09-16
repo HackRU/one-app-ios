@@ -15,7 +15,11 @@ class AnnouncementsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        messages = SlackAPI.apiCall()
+        SlackAPI.apiCall { (textArr) in
+            self.messages = textArr
+            self.loadTable()
+        }
+        
         print("Count: \(messages.count)")
 
         // Uncomment the following line to preserve selection between presentations
@@ -23,6 +27,10 @@ class AnnouncementsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func loadTable(){
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
