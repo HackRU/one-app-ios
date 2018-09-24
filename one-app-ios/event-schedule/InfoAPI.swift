@@ -21,7 +21,7 @@ class InfoAPI: NSObject {
         var textTsList = [TextAndTs]()
 
         // Url with the data
-        let url = URL(string: "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/dayof-events")
+        let url = URL(string: "\(api_endpoint)dayof-events")
 
         // Creating new thread to handle getting data
         let dataTask = URLSession.shared.dataTask(with: url!) { (data, _, _) in

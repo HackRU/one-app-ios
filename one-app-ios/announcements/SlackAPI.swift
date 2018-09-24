@@ -15,7 +15,7 @@ class SlackAPI: NSObject {
     }
 
     static func apiCall(completion: @escaping ([TextAndTs]) -> Void) {
-        let url = URL(string: "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/dayof-slack")
+        let url = URL(string: "\(api_endpoint)dayof-slack")
         var textTsList = [TextAndTs]()
 
         // Creating new thread to handle getting data
