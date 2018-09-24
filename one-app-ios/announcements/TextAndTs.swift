@@ -17,15 +17,9 @@ class TextAndTs {
     init(text: String, timestamp: String) {
         self.text = text
         self.timestamp = timestamp
-<<<<<<< HEAD
         print(timestamp)
 //        let timestampDouble = Double(text)
         let date = Date(timeIntervalSinceNow: Double(timestamp)!)
-=======
-
-        let timestampDouble = Double(timestamp)
-        let date = Date(timeIntervalSince1970: TimeInterval(timestampDouble!))
->>>>>>> event-schedule
         self.date = date
     }
 
