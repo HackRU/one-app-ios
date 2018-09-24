@@ -14,7 +14,10 @@ class EventsTableViewController: UITableViewController {
     var cellText = ""
 
     @IBOutlet var table: UITableView!
-
+    
+    @IBOutlet var textLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +27,7 @@ class EventsTableViewController: UITableViewController {
         // Call for data
         EventsAPI.apiCall { (eventArr) in
             self.messages = eventArr
-            DispatchQueue.main.async{
+            DispatchQueue.main.async {
                 self.loadTable()
             }
         }
@@ -59,8 +62,8 @@ class EventsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        cell.textLabel?.text = messages[indexPath.row].toString()
+        cell.textLabel?.text = messages[indexPath.row].description
+        cell.detailTextLabel?.text = messages[indexPath.row].stringDate(date: messages[indexPath.row].startDate)
 
         return cell
     }

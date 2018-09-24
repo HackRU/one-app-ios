@@ -49,7 +49,7 @@ class EventsAPI: NSObject {
                     return
                 }
                 //print("Body: \(body)")
-                
+
                 print(body.count)
 
                 for item in body {
@@ -61,24 +61,24 @@ class EventsAPI: NSObject {
                     guard let summary = dict["summary"] as? String else {
                         return
                     }
-                    
+
                     guard let endTimeDict = dict["end"] as? [String: Any] else {
                         print("IT NO WORK")
                         return
                     }
-                    
+
                     guard let end = endTimeDict["dateTime"] as? String else {
                         print("START STAMP FAILED")
                         return
                     }
-                    
+
                     guard let location = dict["location"] as? String else {
                         print("LOCATION FAILED")
                         return
                     }
-                    
+
                     let event = Event(description: summary, start: "", end: end, location: location)
-                    
+
                     var start = ""
                     var startTimeDict = try? dict["originalStartTime"] as? [String: Any]
                     if let startDict = startTimeDict {
@@ -87,31 +87,29 @@ class EventsAPI: NSObject {
                             start = (startDict!["dateTime"] as? String)!
                         }
                     }
-                    
+
                     var startTimeWithStartDict = try? dict["start"] as? [String: Any]
                     if let startDict = startTimeWithStartDict {
-                        if (startDict != nil) {
+                        if startDict != nil {
                             start = (startDict!["dateTime"] as? String)!
                         }
                     }
-                    
-                    if (start == "") {
+
+                    if start == "" {
                         start = (event.stringDate(date: event.endDate.addingTimeInterval(-60*60)) as? String)!
                     }
-                    
+
                     event.setStart(start: start)
-        
+
                     print(summary)
                     print(start)
                     print(end)
-                    
-                    
-                    
+
                     eventList.append(event)
                     print(event.description)
 
                 }
-                
+
                 //This is using the completion handle.
                 completion(eventList)
             }

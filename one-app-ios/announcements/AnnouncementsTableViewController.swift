@@ -18,7 +18,7 @@ class AnnouncementsTableViewController: UITableViewController {
 
         SlackAPI.apiCall { (textArr) in
             self.messages = textArr
-            DispatchQueue.main.async{
+            DispatchQueue.main.async {
                 self.loadTable()
             }
         }
