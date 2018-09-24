@@ -11,16 +11,18 @@ import UIKit
 class AnnouncementsTableViewController: UITableViewController {
 
     var messages = [TextAndTs]()
-    var currentCell = 0;
+    var currentCell = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         SlackAPI.apiCall { (textArr) in
             self.messages = textArr
-            self.loadTable()
+            DispatchQueue.main.async{
+                self.loadTable()
+            }
         }
-        
+
         print("Count: \(messages.count)")
 
         // Uncomment the following line to preserve selection between presentations
@@ -29,8 +31,8 @@ class AnnouncementsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    func loadTable(){
+
+    func loadTable() {
         self.tableView.reloadData()
     }
 
@@ -58,14 +60,14 @@ class AnnouncementsTableViewController: UITableViewController {
 
         return cell
     }
-    
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(messages[indexPath.row].toString())
         currentCell = indexPath.row
     }
-    
+
     // MARK: - Navigation
-    
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -110,6 +112,5 @@ class AnnouncementsTableViewController: UITableViewController {
         return true
     }
     */
-    
 
 }

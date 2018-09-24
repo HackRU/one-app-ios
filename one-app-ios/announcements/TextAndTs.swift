@@ -18,8 +18,8 @@ class TextAndTs {
         self.text = text
         self.timestamp = timestamp
 
-        let timestampDouble = Double(NSDate().timeIntervalSince1970)
-        let date = Date(timeIntervalSince1970: TimeInterval(timestampDouble))
+        let timestampDouble = Double(timestamp)
+        let date = Date(timeIntervalSince1970: TimeInterval(timestampDouble!))
         self.date = date
     }
 

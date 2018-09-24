@@ -19,8 +19,9 @@
 		C65FE4EC214214FD003FF3B3 /* SlackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FE4EB214214FD003FF3B3 /* SlackAPI.swift */; };
 		C65FE4EE21422513003FF3B3 /* TextAndTs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FE4ED21422513003FF3B3 /* TextAndTs.swift */; };
 		C6A5D4CF212F490F00EE86DD /* event-schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A5D4CE212F490F00EE86DD /* event-schedule.storyboard */; };
-		C6A5D4D1212F4AB500EE86DD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A5D4D0212F4AB500EE86DD /* TableViewController.swift */; };
-		C6A5D4D3212F4D0200EE86DD /* InfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A5D4D2212F4D0200EE86DD /* InfoAPI.swift */; };
+		C6A5D4D1212F4AB500EE86DD /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A5D4D0212F4AB500EE86DD /* EventsTableViewController.swift */; };
+		C6A5D4D3212F4D0200EE86DD /* EventsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A5D4D2212F4D0200EE86DD /* EventsAPI.swift */; };
+		C6E1C6DB2158815300ECD002 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E1C6DA2158815300ECD002 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +60,9 @@
 		C65FE4EB214214FD003FF3B3 /* SlackAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackAPI.swift; sourceTree = "<group>"; };
 		C65FE4ED21422513003FF3B3 /* TextAndTs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAndTs.swift; sourceTree = "<group>"; };
 		C6A5D4CE212F490F00EE86DD /* event-schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "event-schedule.storyboard"; sourceTree = "<group>"; };
-		C6A5D4D0212F4AB500EE86DD /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		C6A5D4D2212F4D0200EE86DD /* InfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAPI.swift; sourceTree = "<group>"; };
+		C6A5D4D0212F4AB500EE86DD /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		C6A5D4D2212F4D0200EE86DD /* EventsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsAPI.swift; sourceTree = "<group>"; };
+		C6E1C6DA2158815300ECD002 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				C6A5D4CE212F490F00EE86DD /* event-schedule.storyboard */,
-				C6A5D4D0212F4AB500EE86DD /* TableViewController.swift */,
-				C6A5D4D2212F4D0200EE86DD /* InfoAPI.swift */,
+				C6A5D4D0212F4AB500EE86DD /* EventsTableViewController.swift */,
+				C6A5D4D2212F4D0200EE86DD /* EventsAPI.swift */,
+				C6E1C6DA2158815300ECD002 /* Event.swift */,
 			);
 			path = "event-schedule";
 			sourceTree = "<group>";
@@ -321,11 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E1C6DB2158815300ECD002 /* Event.swift in Sources */,
 				C65FE4E821421270003FF3B3 /* AnnouncementsTableViewController.swift in Sources */,
 				9675F6D0210E6F9C00081F58 /* ViewController.swift in Sources */,
-				C6A5D4D1212F4AB500EE86DD /* TableViewController.swift in Sources */,
+				C6A5D4D1212F4AB500EE86DD /* EventsTableViewController.swift in Sources */,
 				C65FE4EE21422513003FF3B3 /* TextAndTs.swift in Sources */,
-				C6A5D4D3212F4D0200EE86DD /* InfoAPI.swift in Sources */,
+				C6A5D4D3212F4D0200EE86DD /* EventsAPI.swift in Sources */,
 				9675F6CE210E6F9C00081F58 /* AppDelegate.swift in Sources */,
 				C65FE4EC214214FD003FF3B3 /* SlackAPI.swift in Sources */,
 			);

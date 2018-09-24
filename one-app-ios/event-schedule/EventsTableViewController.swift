@@ -8,33 +8,35 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
-    
-    var messages = [TextAndTs]()
+class EventsTableViewController: UITableViewController {
+
+    var messages = [Event]()
     var cellText = ""
 
     @IBOutlet var table: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         table.delegate = self
         table.dataSource = self
 
         // Call for data
-       InfoAPI.apiCall { (textArr) in
-            self.messages = textArr
-            self.loadTable()
+        EventsAPI.apiCall { (eventArr) in
+            self.messages = eventArr
+            DispatchQueue.main.async{
+                self.loadTable()
+            }
         }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    func loadTable(){
+
+    func loadTable() {
         self.tableView.reloadData()
     }
 
@@ -62,9 +64,9 @@ class TableViewController: UITableViewController {
 
         return cell
     }
-    
+
     // MARK: - Navigation
-    
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
