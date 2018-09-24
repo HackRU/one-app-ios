@@ -15,7 +15,7 @@ class SlackAPI: NSObject {
     }
 
     static func apiCall(completion: @escaping ([TextAndTs]) -> Void) {
-        let url = URL(string: "\(api_endpoint)dayof-slack")
+        let url = URL(string: "\(apiEndpoint)dayof-slack")
         var textTsList = [TextAndTs]()
 
         // Creating new thread to handle getting data
@@ -55,19 +55,18 @@ class SlackAPI: NSObject {
                         return
                     }
 
-                    print("Text: \(text)")
+                    //print("Text: \(text)")
                     guard let timestamp = dict["ts"] as? String else {
                         return
                     }
-
-                    //print("Timestamp: \(ts)")
+                    //print("Timestamp: \(timestamp)")
                     let textTs = TextAndTs(text: text, timestamp: timestamp)
 
                     textTsList.append(textTs)
                     completion(textTsList)
                 }
 
-                print("TextListCount: \(textTsList.count)")
+                //print("TextListCount: \(textTsList.count)")
             }
         }
         dataTask.resume()

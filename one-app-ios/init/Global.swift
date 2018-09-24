@@ -8,5 +8,4 @@
 
 import Foundation
 
-public let api_endpoint = "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/"
-
+public let apiEndpoint = "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/"
