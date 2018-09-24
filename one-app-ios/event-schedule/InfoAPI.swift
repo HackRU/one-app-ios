@@ -74,7 +74,7 @@ class InfoAPI: NSObject {
                     let textTs = TextAndTs(text: summary, timestamp: timestamp)
                     textTsList.append(textTs)
                     print(textTs.text)
-                    
+
                     //This is using the completion handle.
                     completion(textTsList)
 
@@ -84,6 +84,7 @@ class InfoAPI: NSObject {
 
         // Run the thread
         dataTask.resume()
+
     }
 
 }
