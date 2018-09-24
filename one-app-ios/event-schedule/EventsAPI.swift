@@ -53,7 +53,7 @@ class EventsAPI: NSObject {
                 print(body.count)
 
                 for item in body {
-                    print("Item: \(item)")
+                    //print("Item: \(item)")
                     guard let dict = item as? [String: Any] else {
                         return
                     }
@@ -96,10 +96,11 @@ class EventsAPI: NSObject {
                     }
 
                     if start == "" {
-                        start = (event.stringDate(date: event.endDate.addingTimeInterval(-60*60)) as? String)!
+                        //startDate = event.endDate.addingTimeInterval(-60*60)) as? String)!
+                        print("NO START TIME for \(summary): making it \(start)")
+                    } else {
+                        event.setStart(start: start)
                     }
-
-                    event.setStart(start: start)
 
                     print(summary)
                     print(start)
