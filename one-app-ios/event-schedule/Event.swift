@@ -31,11 +31,6 @@ class Event {
         self.start = start
         self.startDate = stringToDate(str: start)
     }
-    
-   /* func setStartDate(startDate: Date) {
-        self.startDate = startDate
-        self.start = 
-    } */
 
     func setDates () {
         self.startDate = stringToDate(str: start)
@@ -46,7 +41,6 @@ class Event {
         if (str == "") {
             return Date()
         }
-        print("STR: \(str)")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
         let date = dateFormatter.date (from: str)
@@ -62,6 +56,7 @@ class Event {
     }
 
     func stringDate (date: Date) -> String {
+
         let dayTimePeriodFormatter = DateFormatter()
         dayTimePeriodFormatter.dateFormat = "EEE hh:mm a"
         let dateString = dayTimePeriodFormatter.string(from: (date as Date?)!)
