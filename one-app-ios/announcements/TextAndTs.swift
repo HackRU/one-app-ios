@@ -17,9 +17,9 @@ class TextAndTs {
     init(text: String, timestamp: String) {
         self.text = text
         self.timestamp = timestamp
-
-        let timestampDouble = Double(NSDate().timeIntervalSince1970)
-        let date = Date(timeIntervalSince1970: TimeInterval(timestampDouble))
+        print(timestamp)
+//        let timestampDouble = Double(text)
+        let date = Date(timeIntervalSinceNow: Double(timestamp)!)
         self.date = date
     }
 

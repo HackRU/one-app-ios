@@ -18,10 +18,12 @@ class AnnouncementsTableViewController: UITableViewController {
 
         SlackAPI.apiCall { (textArr) in
             self.messages = textArr
-            self.loadTable()
+            DispatchQueue.main.async {
+                self.loadTable()
+            }
         }
 
-        print("Count: \(messages.count)")
+        //print("Count: \(messages.count)")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,7 +62,7 @@ class AnnouncementsTableViewController: UITableViewController {
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(messages[indexPath.row].toString())
+        //print(messages[indexPath.row].toString())
         currentCell = indexPath.row
     }
 
