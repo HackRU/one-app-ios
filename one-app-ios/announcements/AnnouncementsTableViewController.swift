@@ -23,7 +23,11 @@ class AnnouncementsTableViewController: UITableViewController {
             }
         }
 
+<<<<<<< HEAD
         //print("Count: \(messages.count)")
+=======
+        print("Count: \(messages.count)")
+>>>>>>> event-schedule
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

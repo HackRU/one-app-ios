@@ -55,18 +55,31 @@ class SlackAPI: NSObject {
                         return
                     }
 
+<<<<<<< HEAD
                     //print("Text: \(text)")
                     guard let timestamp = dict["ts"] as? String else {
                         return
                     }
                     //print("Timestamp: \(timestamp)")
+=======
+                    print("Text: \(text)")
+                    guard let timestamp = dict["ts"] as? String else {
+                        return
+                    }
+
+                    //print("Timestamp: \(ts)")
+>>>>>>> event-schedule
                     let textTs = TextAndTs(text: text, timestamp: timestamp)
 
                     textTsList.append(textTs)
                     completion(textTsList)
                 }
 
+<<<<<<< HEAD
                 //print("TextListCount: \(textTsList.count)")
+=======
+                print("TextListCount: \(textTsList.count)")
+>>>>>>> event-schedule
             }
         }
         dataTask.resume()

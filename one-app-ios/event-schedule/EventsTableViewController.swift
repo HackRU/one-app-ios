@@ -8,6 +8,7 @@
 
 import UIKit
 
+<<<<<<< HEAD:one-app-ios/event-schedule/TableViewController.swift
 class TableViewController: UITableViewController {
 
     var messages = [TextAndTs]()
@@ -15,6 +16,18 @@ class TableViewController: UITableViewController {
 
     @IBOutlet var table: UITableView!
 
+=======
+class EventsTableViewController: UITableViewController {
+
+    var messages = [Event]()
+    var cellText = ""
+
+    @IBOutlet var table: UITableView!
+    
+    @IBOutlet var textLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    
+>>>>>>> event-schedule:one-app-ios/event-schedule/EventsTableViewController.swift
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,10 +35,18 @@ class TableViewController: UITableViewController {
         table.dataSource = self
 
         // Call for data
+<<<<<<< HEAD:one-app-ios/event-schedule/TableViewController.swift
        InfoAPI.apiCall { (textArr) in
             self.messages = textArr
         DispatchQueue.main.async {
             self.loadTable()
+=======
+        EventsAPI.apiCall { (eventArr) in
+            self.messages = eventArr
+            DispatchQueue.main.async {
+                self.loadTable()
+            }
+>>>>>>> event-schedule:one-app-ios/event-schedule/EventsTableViewController.swift
         }
             print(self.messages)
         }
@@ -60,8 +81,8 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        cell.textLabel?.text = messages[indexPath.row].toString()
+        cell.textLabel?.text = messages[indexPath.row].description
+        cell.detailTextLabel?.text = messages[indexPath.row].stringDate(date: messages[indexPath.row].startDate)
 
         return cell
     }
