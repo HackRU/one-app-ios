@@ -52,13 +52,26 @@ class Event {
     }
     
     func toString () -> String {
-        return stringDate(date: startDate) +  ": " + description + " at " + location
+        return stringDate(date: startDate) +  "-" + shortStringDate(date: endDate) + ": " + description + " at " + location
     }
     
     func stringDate (date: Date) -> String {
         
         let dayTimePeriodFormatter = DateFormatter()
         dayTimePeriodFormatter.dateFormat = "EEE hh:mm a"
+        let dateString = dayTimePeriodFormatter.string(from: (date as Date?)!)
+        return dateString;
+        
+        //let dateFormatter = DateFormatter()
+        //dateFormatter.locale = Locale(identifier: "en_US")
+        //dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm a") // set template after setting locale
+        //return dateFormatter.string(from: date as Date)
+    }
+    
+    func shortStringDate (date: Date) -> String {
+        
+        let dayTimePeriodFormatter = DateFormatter()
+        dayTimePeriodFormatter.dateFormat = "hh:mm a"
         let dateString = dayTimePeriodFormatter.string(from: (date as Date?)!)
         return dateString;
         
