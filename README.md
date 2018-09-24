@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # One App iOS
 BLAH
+=======
+# One App iOS - /announcements
+
+>>>>>>> f668a5d6ccc327add2c692294648bbf7325dd071
 ## Description
 *What is the purpose of this project?*
 
@@ -47,6 +52,8 @@ Currently we are looking to conform to the style-guide written by [RayWenderlich
 * Cleanup old code-base
 * Work on a new design
 * Add new features and fix bugs from last semester
+
+This branch is working on announcements specifically!
 
 ## Links to Further docs
 
