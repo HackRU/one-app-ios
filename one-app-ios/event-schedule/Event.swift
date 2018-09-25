@@ -32,10 +32,12 @@ class Event {
         self.startDate = stringToDate(str: start)
     }
     
-   /* func setStartDate(startDate: Date) {
+    func setStartDate(startDate: Date) {
         self.startDate = startDate
-        self.start = 
-    } */
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
+        self.start = dateFormatter.string(from: (startDate as Date?)!)
+    }
 
     func setDates () {
         self.startDate = stringToDate(str: start)
@@ -58,7 +60,12 @@ class Event {
     }
 
     func toString () -> String {
-        return stringDate(date: startDate) +  "-" + shortStringDate(date: endDate) + ": " + description + " at " + location
+        var str : String
+        str = "Start Time: " + stringDate(date: startDate) + "\n"
+        str += "End Time: " + stringDate(date: endDate) + "\n"
+        str += "Description: " + description + "\n"
+        str += "Location: " + location
+        return str
     }
 
     func stringDate (date: Date) -> String {

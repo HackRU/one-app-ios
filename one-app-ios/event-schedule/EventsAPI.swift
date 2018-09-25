@@ -95,9 +95,10 @@ class EventsAPI: NSObject {
                         }
                     }
 
+                    //if no start time, set default an huor before the end time
                     if start == "" {
-                        //startDate = event.endDate.addingTimeInterval(-60*60)) as? String)!
-                        print("NO START TIME for \(summary): making it \(start)")
+                        event.setStartDate(startDate: event.endDate.addingTimeInterval(-60*60))
+                        print("NO START TIME for \(summary): making it \(start) - \(end)")
                     } else {
                         event.setStart(start: start)
                     }

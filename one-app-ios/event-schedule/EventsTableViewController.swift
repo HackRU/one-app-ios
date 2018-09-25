@@ -64,7 +64,7 @@ class EventsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = messages[indexPath.row].description
         cell.detailTextLabel?.text = messages[indexPath.row].stringDate(date: messages[indexPath.row].startDate)
-
+        cell.detailTextLabel?.textColor = ColorHexParser().UIColorFromHex(rgbValue: 0x0000A0, alpha: 1)
         return cell
     }
 
