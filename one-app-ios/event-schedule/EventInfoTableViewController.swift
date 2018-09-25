@@ -10,8 +10,8 @@ import UIKit
 
 class EventInfoTableViewController: UITableViewController {
 
-    var event: Event?
-
+    public static let mutArr = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadTable()
@@ -41,14 +41,18 @@ class EventInfoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return EventInfoTableViewController.mutArr.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath)
+        cell.textLabel?.text = EventInfoTableViewController.mutArr.object(at: indexPath.row) as? String
+        return cell
+        /*
         var cell: UITableViewCell
         switch indexPath.row {
         case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: "descriptionCell", for: indexPath)
+            
             cell.textLabel?.text = "Description:" + (event?.description)!
         case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
@@ -64,7 +68,8 @@ class EventInfoTableViewController: UITableViewController {
             cell.textLabel?.text = "N/A"
         }
 
-        return cell
+        return cell */
+        
     }
 
     /*

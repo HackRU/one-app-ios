@@ -12,14 +12,9 @@ class EventsTableViewController: UITableViewController {
 
     var messages = [Event]()
     var cellText = ""
-
-    @IBOutlet var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        table.delegate = self
-        table.dataSource = self
 
         // Call for data
         EventsAPI.apiCall { (eventArr) in
@@ -72,10 +67,17 @@ class EventsTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "gottenCellInfo") {
-            if let cell = sender as? UITableViewCell,
-                let indexPath = tableView.indexPath(for: cell) {
-                let vc = segue.destination as? EventInfoTableViewController
-                vc?.event = messages[indexPath.row]
+            //if let cell = sender as? UITableViewCell,
+                //let indexPath = tableView.indexPath(for: cell) {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                //let vc = segue.destination as? EventInfoTableViewController
+                //vc?.event = messages[indexPath.row]
+                let event = messages[indexPath.row]
+                EventInfoTableViewController.mutArr.removeAllObjects()
+                EventInfoTableViewController.mutArr.add("Description: \(event.description)")
+                EventInfoTableViewController.mutArr.add("Location: \(event.location)")
+                EventInfoTableViewController.mutArr.add("Start: \(event.dateToString(date: (event.startDate)))")
+                EventInfoTableViewController.mutArr.add("End: \(event.dateToString(date: (event.endDate)))")
             }
         }
     }
