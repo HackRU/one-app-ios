@@ -31,7 +31,7 @@ class Event {
         self.start = start
         self.startDate = stringToDate(str: start)
     }
-    
+
     func setStartDate(startDate: Date) {
         self.startDate = startDate
         let dateFormatter = DateFormatter()
@@ -60,15 +60,15 @@ class Event {
     }
 
     func toString () -> String {
-        var str : String
-        str = "Start Time: " + stringDate(date: startDate) + "\n"
-        str += "End Time: " + stringDate(date: endDate) + "\n"
+        var str: String
+        str = "Start Time: " + dateToString(date: startDate) + "\n"
+        str += "End Time: " + dateToString(date: endDate) + "\n"
         str += "Description: " + description + "\n"
         str += "Location: " + location
         return str
     }
 
-    func stringDate (date: Date) -> String {
+    func dateToString (date: Date) -> String {
         let dayTimePeriodFormatter = DateFormatter()
         dayTimePeriodFormatter.dateFormat = "EEE hh:mm a"
         let dateString = dayTimePeriodFormatter.string(from: (date as Date?)!)
@@ -80,6 +80,7 @@ class Event {
         //return dateFormatter.string(from: date as Date)
     }
 
+    /*
     func shortStringDate (date: Date) -> String {
 
         let dayTimePeriodFormatter = DateFormatter()
@@ -91,6 +92,6 @@ class Event {
         //dateFormatter.locale = Locale(identifier: "en_US")
         //dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm a") // set template after setting locale
         //return dateFormatter.string(from: date as Date)
-    }
+    } */
 
 }
