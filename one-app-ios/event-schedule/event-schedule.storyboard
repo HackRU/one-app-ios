@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,7 +42,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="vEz-Hn-pzj" kind="show" identifier="gottenCellInfo" id="MPB-zX-n5V"/>
+                                    <segue destination="Npn-U1-r9g" kind="show" identifier="gottenCellInfo" id="1Iu-s9-CLE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,52 +58,42 @@
             <point key="canvasLocation" x="1111.2" y="188.45577211394306"/>
         </scene>
         <!--Details-->
-        <scene sceneID="zzi-Cs-wfH">
+        <scene sceneID="9FP-xx-t6U">
             <objects>
-                <viewController id="vEz-Hn-pzj" customClass="EventInfoTableViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3Dm-b3-MSh">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dth-9H-01g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="Npn-U1-r9g" customClass="EventInfoTableViewController" customModule="one_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="9fr-kh-dHn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5W4-lf-Lfg">
-                                <rect key="frame" x="10" y="74" width="355" height="583"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" textLabel="y52-Y5-NNR" style="IBUITableViewCellStyleDefault" id="t4S-qT-xXG">
-                                        <rect key="frame" x="0.0" y="28" width="355" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t4S-qT-xXG" id="8Td-hj-wRz">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" textLabel="vts-U6-PJc" style="IBUITableViewCellStyleDefault" id="wz5-WB-SKm">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wz5-WB-SKm" id="2Xe-4s-FbD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vts-U6-PJc">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y52-Y5-NNR">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="C3i-HM-oyl" firstAttribute="trailing" secondItem="5W4-lf-Lfg" secondAttribute="trailing" constant="10" id="8Ol-Ux-7dq"/>
-                            <constraint firstItem="C3i-HM-oyl" firstAttribute="bottom" secondItem="5W4-lf-Lfg" secondAttribute="bottom" constant="10" id="Zb8-y2-0SD"/>
-                            <constraint firstItem="5W4-lf-Lfg" firstAttribute="top" secondItem="C3i-HM-oyl" secondAttribute="top" constant="10" id="jQC-KO-nDq"/>
-                            <constraint firstItem="5W4-lf-Lfg" firstAttribute="leading" secondItem="C3i-HM-oyl" secondAttribute="leading" constant="10" id="k0M-W9-emM"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="C3i-HM-oyl"/>
-                    </view>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Npn-U1-r9g" id="dgd-4r-BwO"/>
+                            <outlet property="delegate" destination="Npn-U1-r9g" id="mZE-2G-L8p"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" title="Details" id="U1t-TF-ueW" userLabel="Details"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nHk-tl-stX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1855.2" y="187.55622188905548"/>
+            <point key="canvasLocation" x="1873" y="188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="roG-FO-3Ay">

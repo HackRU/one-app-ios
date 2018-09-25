@@ -12,7 +12,7 @@ class EventsTableViewController: UITableViewController {
 
     var messages = [Event]()
     var cellText = ""
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

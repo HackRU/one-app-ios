@@ -11,20 +11,17 @@ import UIKit
 class EventInfoTableViewController: UITableViewController {
 
     public static let mutArr = NSMutableArray()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadTable()
-        
+
+        print("Amount of data: \(EventInfoTableViewController.mutArr.count)")
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    
-    func loadTable() {
-        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,7 +66,7 @@ class EventInfoTableViewController: UITableViewController {
         }
 
         return cell */
-        
+
     }
 
     /*

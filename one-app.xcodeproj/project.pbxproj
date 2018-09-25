@@ -23,6 +23,7 @@
 		C6A5D4D3212F4D0200EE86DD /* EventsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A5D4D2212F4D0200EE86DD /* EventsAPI.swift */; };
 		C6E1C6DB2158815300ECD002 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E1C6DA2158815300ECD002 /* Event.swift */; };
 		C6E1C6DD2159AF7200ECD002 /* ColorHexParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E1C6DC2159AF7200ECD002 /* ColorHexParser.swift */; };
+		C6E1C6DF2159B42A00ECD002 /* EventInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E1C6DE2159B42A00ECD002 /* EventInfoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		C6A5D4D2212F4D0200EE86DD /* EventsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsAPI.swift; sourceTree = "<group>"; };
 		C6E1C6DA2158815300ECD002 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		C6E1C6DC2159AF7200ECD002 /* ColorHexParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexParser.swift; sourceTree = "<group>"; };
+		C6E1C6DE2159B42A00ECD002 /* EventInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				C6A5D4CE212F490F00EE86DD /* event-schedule.storyboard */,
 				C6A5D4D0212F4AB500EE86DD /* EventsTableViewController.swift */,
+				C6E1C6DE2159B42A00ECD002 /* EventInfoTableViewController.swift */,
 				C6A5D4D2212F4D0200EE86DD /* EventsAPI.swift */,
 				C6E1C6DA2158815300ECD002 /* Event.swift */,
 				C6E1C6DC2159AF7200ECD002 /* ColorHexParser.swift */,
@@ -335,6 +338,7 @@
 				C6A5D4D3212F4D0200EE86DD /* EventsAPI.swift in Sources */,
 				C6E1C6DD2159AF7200ECD002 /* ColorHexParser.swift in Sources */,
 				9675F6CE210E6F9C00081F58 /* AppDelegate.swift in Sources */,
+				C6E1C6DF2159B42A00ECD002 /* EventInfoTableViewController.swift in Sources */,
 				C65FE4EC214214FD003FF3B3 /* SlackAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
