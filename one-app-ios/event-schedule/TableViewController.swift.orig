@@ -8,20 +8,26 @@
 
 import UIKit
 
-class EventsTableViewController: UITableViewController {
+class TableViewController: UITableViewController {
 
-    var messages = [Event]()
+    var messages = [TextAndTs]()
     var cellText = ""
 
+<<<<<<< HEAD:one-app-ios/event-schedule/TableViewController.swift
+    @IBOutlet var table: UITableView!
+
+=======
+>>>>>>> event-schedule-update:one-app-ios/event-schedule/EventsTableViewController.swift
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Call for data
-        EventsAPI.apiCall { (eventArr) in
-            self.messages = eventArr
-            DispatchQueue.main.async {
-                self.loadTable()
-            }
+       InfoAPI.apiCall { (textArr) in
+            self.messages = textArr
+        DispatchQueue.main.async {
+            self.loadTable()
+        }
+            print(self.messages)
         }
 
         // Uncomment the following line to preserve selection between presentations
@@ -54,9 +60,15 @@ class EventsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+<<<<<<< HEAD:one-app-ios/event-schedule/TableViewController.swift
+
+        cell.textLabel?.text = messages[indexPath.row].toString()
+
+=======
         cell.textLabel?.text = messages[indexPath.row].description
         cell.detailTextLabel?.text = messages[indexPath.row].dateToString(date: messages[indexPath.row].startDate)
         cell.detailTextLabel?.textColor = ColorHexParser().UIColorFromHex(rgbValue: 0x0000A0, alpha: 1)
+>>>>>>> event-schedule-update:one-app-ios/event-schedule/EventsTableViewController.swift
         return cell
     }
 

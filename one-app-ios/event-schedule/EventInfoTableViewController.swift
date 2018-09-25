@@ -1,38 +1,27 @@
 //
-//  TableViewController.swift
+//  EventInfoTableViewController.swift
 //  one-app
 //
-//  Created by Sunny Feng on 8/23/18.
+//  Created by Sunny Feng on 9/24/18.
 //  Copyright © 2018 HackRU. All rights reserved.
 //
 
 import UIKit
 
-class EventsTableViewController: UITableViewController {
+class EventInfoTableViewController: UITableViewController {
 
-    var messages = [Event]()
-    var cellText = ""
+    public static let mutArr = NSMutableArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Call for data
-        EventsAPI.apiCall { (eventArr) in
-            self.messages = eventArr
-            DispatchQueue.main.async {
-                self.loadTable()
-            }
-        }
+        print("Amount of data: \(EventInfoTableViewController.mutArr.count)")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
-    func loadTable() {
-        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,37 +38,35 @@ class EventsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return messages.count
+        return EventInfoTableViewController.mutArr.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = messages[indexPath.row].description
-        cell.detailTextLabel?.text = messages[indexPath.row].dateToString(date: messages[indexPath.row].startDate)
-        cell.detailTextLabel?.textColor = ColorHexParser().UIColorFromHex(rgbValue: 0x0000A0, alpha: 1)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath)
+        cell.textLabel?.text = EventInfoTableViewController.mutArr.object(at: indexPath.row) as? String
         return cell
-    }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if (segue.identifier == "gottenCellInfo") {
-            //if let cell = sender as? UITableViewCell,
-                //let indexPath = tableView.indexPath(for: cell) {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                //let vc = segue.destination as? EventInfoTableViewController
-                //vc?.event = messages[indexPath.row]
-                let event = messages[indexPath.row]
-                EventInfoTableViewController.mutArr.removeAllObjects()
-                EventInfoTableViewController.mutArr.add("Description: \(event.description)")
-                EventInfoTableViewController.mutArr.add("Location: \(event.location)")
-                EventInfoTableViewController.mutArr.add("Start: \(event.dateToString(date: (event.startDate)))")
-                EventInfoTableViewController.mutArr.add("End: \(event.dateToString(date: (event.endDate)))")
-            }
+        /*
+        var cell: UITableViewCell
+        switch indexPath.row {
+        case 0:
+            
+            cell.textLabel?.text = "Description:" + (event?.description)!
+        case 1:
+            cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
+            cell.textLabel?.text = "Location: " + (event?.location)!
+        case 2:
+            cell = tableView.dequeueReusableCell(withIdentifier: "startCell", for: indexPath)
+            cell.textLabel?.text = event?.dateToString(date: (event?.startDate)!)
+        case 3:
+            cell = tableView.dequeueReusableCell(withIdentifier: "endCell", for: indexPath)
+            cell.textLabel?.text = event?.dateToString(date: (event?.endDate)!)
+        default:
+            cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+            cell.textLabel?.text = "N/A"
         }
+
+        return cell */
+
     }
 
     /*
@@ -114,6 +101,16 @@ class EventsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
+    }
+    */
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
     */
 
