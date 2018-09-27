@@ -72,10 +72,11 @@ class AnnouncementsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if (segue.destination is ViewController) {
-            let vc = segue.destination as? ViewController
-            vc?.message = messages[currentCell].toString()
+        if case segue.destination = segue.destination as? ViewController {
+            let destViewController = segue.destination as? ViewController
+            destViewController?.message = messages[currentCell].toString()
         }
+
     }
 
     /*
