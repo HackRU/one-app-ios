@@ -88,7 +88,7 @@ class EventsAPI: NSObject {
                         }
                     }
 
-                    var startTimeWithStartDict = try? dict["start"] as? [String: Any]
+                    let startTimeWithStartDict = try? dict["start"] as? [String: Any]
                     if let startDict = startTimeWithStartDict {
                         if startDict != nil {
                             start = (startDict!["dateTime"] as? String)!
