@@ -10,6 +10,10 @@ import Foundation
 
 public let apiEndpoint = "https://7c5l6v7ip3.execute-api.us-west-2.amazonaws.com/lcs-test/"
 
+public class Global{
+    
+}
+
 public struct HackRUColor {
 
     var red: String?
