@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private let secretString = "Testing for travis"
 
     var message: String?
 
