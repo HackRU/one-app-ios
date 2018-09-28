@@ -45,7 +45,7 @@ class Event {
     }
 
     func stringToDate(str: String) -> Date {
-        if (str == "") {
+        if str == "" {
             return Date()
         }
         print("STR: \(str)")

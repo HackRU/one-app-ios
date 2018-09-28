@@ -28,14 +28,11 @@ class EventsAPI: NSObject {
 
             // If data exists, print
             if let data = data {
-                // print("Data: \(data)")
-
                 // Dictionary with String key and any object as value
                 guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any?] else {
                     // If didn't work, return
                     return
                 }
-
                 guard let statusCode = json!["statusCode"] as? Int else {
                     return
                 }
@@ -44,12 +41,10 @@ class EventsAPI: NSObject {
                 if statusCode != 200 {
                     //error
                 }
-
                 guard let body = json!["body"] as? NSArray else {
                     return
                 }
                 //print("Body: \(body)")
-
                 print(body.count)
 
                 for item in body {
@@ -57,11 +52,11 @@ class EventsAPI: NSObject {
                     guard let dict = item as? [String: Any] else {
                         return
                     }
-                    //print("Dict: \(dict)")
+                    //Getting Summary
                     guard let summary = dict["summary"] as? String else {
                         return
                     }
-
+                    //Getting event end time
                     guard let endTimeDict = dict["end"] as? [String: Any] else {
                         print("IT NO WORK")
                         return
@@ -77,38 +72,7 @@ class EventsAPI: NSObject {
                         return
                     }
 
-                    let event = Event(description: summary, start: "", end: end, location: location)
-
-                    var start = ""
-                    var startTimeDict = try? dict["originalStartTime"] as? [String: Any]
-                    if let startDict = startTimeDict {
-                        if (startDict != nil) {
-                            // TODO: startDict is nil but it still comes into here
-                            start = (startDict!["dateTime"] as? String)!
-                        }
-                    }
-
-                    let startTimeWithStartDict = try? dict["start"] as? [String: Any]
-                    if let startDict = startTimeWithStartDict {
-                        if startDict != nil {
-                            start = (startDict!["dateTime"] as? String)!
-                        }
-                    }
-
-                    //if no start time, set default an huor before the end time
-                    if start == "" {
-                        event.setStartDate(startDate: event.endDate.addingTimeInterval(-60*60))
-                        print("NO START TIME for \(summary): making it \(start) - \(end)")
-                    } else {
-                        event.setStart(start: start)
-                    }
-
-                    print(summary)
-                    print(start)
-                    print(end)
-
-                    eventList.append(event)
-                    print(event.description)
+                    eventList.append(EventsAPI.createEventFromItem(dict: dict, summary: summary, end: end, location: location))
 
                 }
 
@@ -119,6 +83,55 @@ class EventsAPI: NSObject {
 
         // Run the thread
         dataTask.resume()
+    }
+
+    static func cleanString (str: String) -> String {
+        var res = ""
+        var openBracColon = false
+
+        for char in str {
+            if openBracColon {
+                if char == ">" || char == ":" {
+                    openBracColon = false
+                }
+            } else {
+                if char == "<" || char == ":" {
+                    openBracColon = true
+                } else {
+                    res.append(char)
+                }
+            }
+
+        }
+
+        print(res)
+        return res
+    }
+
+    static func createEventFromItem(dict: [String: Any], summary: String, end: String, location: String) -> Event {
+
+        let text = EventsAPI.cleanString(str: summary)
+        let event = Event(description: text, start: "", end: end, location: location)
+
+        var start = ""
+        let startTimeDict = dict["originalStartTime"] as? [String: Any]
+        if let startDict = startTimeDict {
+            start = (startDict["dateTime"] as? String)!
+        }
+
+        let startTimeWithStartDict = dict["start"] as? [String: Any]
+        if let startDict = startTimeWithStartDict {
+            start = (startDict["dateTime"] as? String)!
+        }
+        //if no start time, set default an huor before the end time
+        if start == "" {
+            event.setStartDate(startDate: event.endDate.addingTimeInterval(-60*60))
+            print("NO START TIME for \(summary): making it \(start) - \(end)")
+        } else {
+            event.setStart(start: start)
+        }
+
+        return event
     }
 
 }
