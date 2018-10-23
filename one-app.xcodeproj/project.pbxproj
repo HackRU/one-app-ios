@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9604E7842159D3F700814EEF /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604E7832159D3F700814EEF /* Global.swift */; };
 		96B9BB02215EC47B005A45B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BAFA215EC47B005A45B7 /* ViewController.swift */; };
 		96B9BB03215EC47B005A45B7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BAFB215EC47B005A45B7 /* Global.swift */; };
 		96B9BB04215EC47B005A45B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B9BAFC215EC47B005A45B7 /* Assets.xcassets */; };
 		96B9BB05215EC47B005A45B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B9BAFD215EC47B005A45B7 /* LaunchScreen.storyboard */; };
 		96B9BB06215EC47B005A45B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B9BAFF215EC47B005A45B7 /* Main.storyboard */; };
 		96B9BB07215EC47B005A45B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BB01215EC47B005A45B7 /* AppDelegate.swift */; };
+		96B9BB0D215EC86D005A45B7 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B9BB0C215EC86D005A45B7 /* Countdown.swift */; };
+		96B9BB1921613F44005A45B7 /* Countdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B9BB1821613F43005A45B7 /* Countdown.xib */; };
 		C65FE4E421402AD0003FF3B3 /* announcements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65FE4E321402AD0003FF3B3 /* announcements.storyboard */; };
 		C65FE4E821421270003FF3B3 /* AnnouncementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FE4E721421270003FF3B3 /* AnnouncementsTableViewController.swift */; };
 		C65FE4EC214214FD003FF3B3 /* SlackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FE4EB214214FD003FF3B3 /* SlackAPI.swift */; };
@@ -26,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9604E7832159D3F700814EEF /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		9675F6CA210E6F9C00081F58 /* one-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "one-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9675F6D9210E6F9E00081F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B9BAFA215EC47B005A45B7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +35,8 @@
 		96B9BAFE215EC47B005A45B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96B9BB00215EC47B005A45B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96B9BB01215EC47B005A45B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96B9BB0C215EC86D005A45B7 /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
+		96B9BB1821613F43005A45B7 /* Countdown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Countdown.xib; sourceTree = "<group>"; };
 		C65FE4E321402AD0003FF3B3 /* announcements.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = announcements.storyboard; sourceTree = "<group>"; };
 		C65FE4E721421270003FF3B3 /* AnnouncementsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsTableViewController.swift; sourceTree = "<group>"; };
 		C65FE4EB214214FD003FF3B3 /* SlackAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackAPI.swift; sourceTree = "<group>"; };
@@ -111,11 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				96B9BAFA215EC47B005A45B7 /* ViewController.swift */,
-				9604E7832159D3F700814EEF /* Global.swift */,
 				96B9BAFB215EC47B005A45B7 /* Global.swift */,
 				96B9BAFC215EC47B005A45B7 /* Assets.xcassets */,
-				96B9BAFD215EC47B005A45B7 /* LaunchScreen.storyboard */,
+				96B9BB0C215EC86D005A45B7 /* Countdown.swift */,
+				96B9BB1821613F43005A45B7 /* Countdown.xib */,
 				96B9BAFF215EC47B005A45B7 /* Main.storyboard */,
+				96B9BAFD215EC47B005A45B7 /* LaunchScreen.storyboard */,
 				96B9BB01215EC47B005A45B7 /* AppDelegate.swift */,
 			);
 			path = init;
@@ -186,6 +189,7 @@
 				96B9BB06215EC47B005A45B7 /* Main.storyboard in Resources */,
 				96B9BB05215EC47B005A45B7 /* LaunchScreen.storyboard in Resources */,
 				96B9BB04215EC47B005A45B7 /* Assets.xcassets in Resources */,
+				96B9BB1921613F44005A45B7 /* Countdown.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +208,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -222,8 +226,8 @@
 				96B9BB07215EC47B005A45B7 /* AppDelegate.swift in Sources */,
 				96B9BB03215EC47B005A45B7 /* Global.swift in Sources */,
 				C6E1C6DF2159B42A00ECD002 /* EventInfoTableViewController.swift in Sources */,
-				9604E7842159D3F700814EEF /* Global.swift in Sources */,
 				C65FE4EC214214FD003FF3B3 /* SlackAPI.swift in Sources */,
+				96B9BB0D215EC86D005A45B7 /* Countdown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
